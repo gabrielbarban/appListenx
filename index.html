@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="listaControllerApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <script src="https://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="controller/controller.js"></script>
+        <style type="text/css">
+          #menu{
+            height: 100px;
+            background-color: #836FFF;
+            color: white;
+          }
+
+          #item_menu{
+            margin: 10px 10px 10px 10px;
+          }
+
+          img{
+            width: 250px;
+          }
+
+        </style>
+    </head>
+    <body>
+    <div id="menu">
+        <div id="interno" class="row">
+          <div id="item_menu" class="col-md-3 align-self-center"><img src="http://listenx.com.br/play/wp-content/uploads/2021/01/listenx-semslogan-cor.png"></div>
+          <div id="item_menu"class="col-md-1 align-self-center"></div>
+          <div id="item_menu" class="col-md-1 align-self-center">Título</div>
+          <div id="item_menu" class="col-md-1 align-self-center">Artista</div>
+          <div id="item_menu" class="col-md-1 align-self-center">Energia</div>
+          <div id="item_menu" class="col-md-1 align-self-center">Idioma</div>
+          <div id="item_menu" class="col-md-1 align-self-center">Voz</div>
+          <div id="item_menu" class="col-md-1 align-self-center">Voto</div>
+        </div>
+      </div>
+    <div class="container">
+
+      <div ng-controller="ListaControllerCtrl">
+        <!--<h2 ng-repeat="item in itens">{{ item.nome }}</h2>!-->
+        <table>
+          <tbody >
+            <tr ng-repeat="d in itens">
+              <td class="col-md-2 align-self-center">
+                <audio autoplay="autoplay" controls="controls">
+                  <source src="{{ d.link }}" type="audio/mp3" />
+                  seu navegador não suporta HTML5
+                </audio>
+              </td>
+                <td class="col-md-2 align-self-center"><strong>{{ d.titulo }}</strong></td>
+                <td class="col-md-1 align-self-center">{{ d.artista }}</td>
+                <td class="col-md-1 align-self-center">{{ d.energia }}</td>
+                <td class="col-md-1 align-self-center">{{ d.idioma }}</td>
+                <td class="col-md-1 align-self-center">{{ d.voz }}</td>
+                <td class="col-md-2 align-self-center">{{ d.voto }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </body>
+</html>
