@@ -13,9 +13,18 @@
 		$dados["idioma"] = $dadosMusica[3];
 		$dados["voz"] = $dadosMusica[4];
 		$dados["link"] = $dadosMusica[5];
-		$dados["voto"] = $dadosMusica[6];
+
+		if($dadosMusica[6] == "sim"){
+			$dados["voto1"] = "assets/likeON.png";
+			$dados["voto2"] = "assets/deslikeOFF.png";
+		} else if($dadosMusica[6] == "nao"){
+			$dados["voto1"] = "assets/likeOFF.png";
+			$dados["voto2"] = "assets/deslikeON.png";
+		}
+
 		$retorno[$i] = $dados;
 		$i++;
 	}
+
 	echo json_encode($retorno);
 ?>

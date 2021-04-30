@@ -10,5 +10,32 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 		  }, function errorCallback(response) {
 		    
 	});
+
+	$scope.salva_voto1 = function() {
+	  var titulo = document.getElementById("titulo_escolhido").value;
+      $http({
+		  method: 'POST',
+		  url: 'api/v1/SalvaVotos.php',
+		  data: {'voto': 'sim', 'titulo': titulo}
+		}).then(function successCallback(response) {
+		    $scope.itens = response.data;
+		  }, function errorCallback(response) {
+		    
+	  });
+    };
+
+
+    $scope.salva_voto2 = function() {
+	  var titulo = document.getElementById("titulo_escolhido").value;
+      $http({
+		  method: 'POST',
+		  url: 'api/v1/SalvaVotos.php',
+		  data: {'voto': 'nao', 'titulo': titulo}
+		}).then(function successCallback(response) {
+		    $scope.itens = response.data;
+		  }, function errorCallback(response) {
+		    
+	  });
+    };
  
 }]);

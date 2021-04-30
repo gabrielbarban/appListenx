@@ -22,7 +22,18 @@
             width: 250px;
           }
 
+          .voto{
+            width: 25px;
+          }
+
         </style>
+
+        <script type="text/javascript">
+          function seta_titulo(titulo){
+            var s = document.getElementById("titulo_escolhido");
+            s.value = titulo;
+          }
+        </script>
     </head>
     <body>
     <div id="menu">
@@ -38,9 +49,8 @@
         </div>
       </div>
     <div class="container">
-
+      <input type="hidden" name="titulo_escolhido" id="titulo_escolhido" value="">
       <div ng-controller="ListaControllerCtrl">
-        <!--<h2 ng-repeat="item in itens">{{ item.nome }}</h2>!-->
         <table>
           <tbody >
             <tr ng-repeat="d in itens">
@@ -55,7 +65,8 @@
                 <td class="col-md-1 align-self-center">{{ d.energia }}</td>
                 <td class="col-md-1 align-self-center">{{ d.idioma }}</td>
                 <td class="col-md-1 align-self-center">{{ d.voz }}</td>
-                <td class="col-md-2 align-self-center">{{ d.voto }}</td>
+                <td class="col-md-1 align-self-center"><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto1()"><img class="voto" src="{{ d.voto1 }}"></button></td>
+                <td class="col-md-1 align-self-center"><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto2()"><img class="voto" src="{{ d.voto2 }}"></button></td>
             </tr>
           </tbody>
         </table>
