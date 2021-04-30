@@ -24,7 +24,6 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 	  });
     };
 
-
     $scope.salva_voto2 = function() {
 	  var titulo = document.getElementById("titulo_escolhido").value;
       $http({
