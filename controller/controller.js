@@ -18,7 +18,7 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 		  url: 'api/v1/SalvaVotos.php',
 		  data: {'voto': 'sim', 'titulo': titulo}
 		}).then(function successCallback(response) {
-		    $scope.itens = response.data;
+		    window.location.href = "http://localhost:81/appListenx/";
 		  }, function errorCallback(response) {
 		    
 	  });
@@ -32,7 +32,7 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 		  url: 'api/v1/SalvaVotos.php',
 		  data: {'voto': 'nao', 'titulo': titulo}
 		}).then(function successCallback(response) {
-		    $scope.itens = response.data;
+		    window.location.href = "http://localhost:81/appListenx/";
 		  }, function errorCallback(response) {
 		    
 	  });
