@@ -1,6 +1,8 @@
 <?php
 	include("../../model/ListagemModel.php");
+	include("../../service/RequestService.php");
 	$listagem = new ListagemModel();
+	$request = new RequestService();
 	$data = $listagem->pega_musicas();
 	$retorno = array();
 
@@ -25,6 +27,6 @@
 		$retorno[$i] = $dados;
 		$i++;
 	}
-
-	echo json_encode($retorno);
+	$data_request = $request->jwt($retorno);
+	echo json_encode($data_request);
 ?>

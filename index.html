@@ -12,6 +12,7 @@
             height: 100px;
             background-color: #836FFF;
             color: white;
+            margin-bottom: 15px;
           }
 
           #item_menu{
@@ -26,6 +27,10 @@
             width: 25px;
           }
 
+          .audio{
+            width: 150px;
+          }
+
         </style>
 
         <script type="text/javascript">
@@ -36,41 +41,54 @@
         </script>
     </head>
     <body>
+      <div class="container">
+      <div ng-controller="ListaControllerCtrl">
     <div id="menu">
         <div id="interno" class="row">
           <div id="item_menu" class="col-md-3 align-self-center"><img src="http://listenx.com.br/play/wp-content/uploads/2021/01/listenx-semslogan-cor.png"></div>
-          <div id="item_menu"class="col-md-1 align-self-center"></div>
+          <div id="item_menu" class="col-md-1 align-self-center"></div>
           <div id="item_menu" class="col-md-1 align-self-center">Título</div>
           <div id="item_menu" class="col-md-1 align-self-center">Artista</div>
           <div id="item_menu" class="col-md-1 align-self-center">Energia</div>
           <div id="item_menu" class="col-md-1 align-self-center">Idioma</div>
           <div id="item_menu" class="col-md-1 align-self-center">Voz</div>
           <div id="item_menu" class="col-md-1 align-self-center">Voto</div>
+          <div id="item_menu" class="col-md-1 align-self-center"></div>
+          <div id="item_menu" class="col-md-1 align-self-center"></div>
         </div>
       </div>
-    <div class="container">
-      <input type="hidden" name="titulo_escolhido" id="titulo_escolhido" value="">
-      <div ng-controller="ListaControllerCtrl">
-        <table>
-          <tbody >
-            <tr ng-repeat="d in itens">
-              <td class="col-md-2 align-self-center">
-                <audio autoplay="autoplay" controls="controls">
-                  <source src="{{ d.link }}" type="audio/mp3" />
-                  seu navegador não suporta HTML5
-                </audio>
-              </td>
-                <td class="col-md-2 align-self-center"><strong>{{ d.titulo }}</strong></td>
-                <td class="col-md-1 align-self-center">{{ d.artista }}</td>
-                <td class="col-md-1 align-self-center">{{ d.energia }}</td>
-                <td class="col-md-1 align-self-center">{{ d.idioma }}</td>
-                <td class="col-md-1 align-self-center">{{ d.voz }}</td>
-                <td class="col-md-1 align-self-center"><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto1()"><img class="voto" src="{{ d.voto1 }}"></button></td>
-                <td class="col-md-1 align-self-center"><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto2()"><img class="voto" src="{{ d.voto2 }}"></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      
+          <div class="row">
+                <div class="col-md-3">
+                  <img src="assets/capa_playlist.jpeg">
+                </div>
+
+                <div class="col-md-8">
+                        <input type="hidden" name="titulo_escolhido" id="titulo_escolhido" value="">
+                      <table>
+                        <tbody >
+                          <tr ng-repeat="d in itens">
+                            <div id="interno" class="row">
+                              <td class="col-md-1">
+                                <audio class="audio" autoplay="autoplay" controls="controls">
+                                  <source src="{{ d.link }}" type="audio/mp3" />
+                                  seu navegador não suporta HTML5
+                                </audio>
+                              </td>
+                                <td class="col-md-1 "><strong>{{ d.titulo }}</strong></td>
+                                <td class="col-md-1 ">{{ d.artista }}</td>
+                                <td class="col-md-1 ">{{ d.energia }}</td>
+                                <td class="col-md-1 ">{{ d.idioma }}</td>
+                                <td class="col-md-1 ">{{ d.voz }}</td>
+                                <td class="col-md-1 "><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto1()"><img class="voto" src="{{ d.voto1 }}"></button></td>
+                                <td class="col-md-1 align-self-center"><button onclick="seta_titulo('{{ d.titulo }}')" ng-click="salva_voto2()"><img class="voto" src="{{ d.voto2 }}"></button></td>
+                            </div>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+          </div>
+       </div>
     </body>
 </html>
