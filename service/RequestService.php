@@ -5,7 +5,7 @@
 	 */
 	class RequestService
 	{
-		function jwt($payload)
+		function gera_jwt($payload)
 		{
 			$header = [
 			   'alg' => 'HS256',
@@ -21,6 +21,14 @@
 			$signature = base64_encode($signature);
 
 			return "$header.$payload.$signature";
+		}
+
+		function le_jwt($token)
+		{
+			require_once 'JWT.php';
+			$secret = 'minha-senha';
+			$decodedJWT = JWT::decode($token, $secret);
+			return $decodedJWT;
 		}
 	}
 

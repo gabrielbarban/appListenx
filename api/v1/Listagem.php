@@ -27,6 +27,6 @@
 		$retorno[$i] = $dados;
 		$i++;
 	}
-	$data_request = $request->jwt($retorno);
+	$data_request = $request->gera_jwt($retorno);
 	echo json_encode($data_request);
 ?>
