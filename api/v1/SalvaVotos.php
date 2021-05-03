@@ -12,6 +12,18 @@
 	$data = $request->le_jwt($token);
 	$voto = $data->voto;
 	$titulo = $data->titulo;
-	$votoModel->salva_voto($voto, $titulo);
+	if($votoModel->salva_voto($voto, $titulo)){
+		$response = [
+			'mensagem' => 'OK',
+			'HttpStatusCode' => '201'
+		];
+		echo json_encode($request->gera_jwt($response));
+	} else{
+		$response = [
+			'mensagem' => 'NOK',
+			'HttpStatusCode' => '401'
+		];
+		echo json_encode($request->gera_jwt($response));
+	}
 	
 ?>s

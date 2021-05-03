@@ -16,9 +16,9 @@
 					$data->musicas[$i] = implode('-listenx-', $dadosMusica);
 				}
 			}
-			var_dump($data);
 			$arquivo_json_alterado = json_encode($data);
 			file_put_contents('../../bd/playlist.json', $arquivo_json_alterado);
+			return true;
 		}
 	}
 

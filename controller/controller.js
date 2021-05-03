@@ -25,7 +25,10 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 		  url: 'api/v1/SalvaVotos.php',
 		  data: {'token': token}
 		}).then(function successCallback(response) {
-		    //window.location.href = "http://localhost:81/appListenx/";
+			var data = jwt_decode(response.data);
+			if(data.HttpStatusCode === "201"){
+				window.location.href = "http://localhost:81/appListenx/";
+			}
 		  }, function errorCallback(response) {
 		    
 	  });
@@ -43,7 +46,10 @@ listaController.controller('ListaControllerCtrl', ['$scope','$http', function($s
 		  url: 'api/v1/SalvaVotos.php',
 		  data: {'token': token}
 		}).then(function successCallback(response) {
-		    //window.location.href = "http://localhost:81/appListenx/";
+		    var data = jwt_decode(response.data);
+			if(data.HttpStatusCode === "201"){
+				window.location.href = "http://localhost:81/appListenx/";
+			}
 		  }, function errorCallback(response) {
 		    
 	  });
