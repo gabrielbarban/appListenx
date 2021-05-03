@@ -1,0 +1,22 @@
+#menu{
+  height: 100px;
+  background-color: #836FFF;
+  color: white;
+  margin-bottom: 15px;
+}
+
+#item_menu{
+  margin: 10px 10px 10px 10px;
+}
+
+img{
+  width: 250px;
+}
+
+.voto{
+  width: 25px;
+}
+
+.audio{
+  width: 150px;
+}

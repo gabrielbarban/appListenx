@@ -17,11 +17,11 @@
 		$dados["link"] = $dadosMusica[5];
 
 		if($dadosMusica[6] == "sim"){
-			$dados["voto1"] = "assets/likeON.png";
-			$dados["voto2"] = "assets/deslikeOFF.png";
+			$dados["voto1"] = "assets/img/likeON.png";
+			$dados["voto2"] = "assets/img/deslikeOFF.png";
 		} else if($dadosMusica[6] == "nao"){
-			$dados["voto1"] = "assets/likeOFF.png";
-			$dados["voto2"] = "assets/deslikeON.png";
+			$dados["voto1"] = "assets/img/likeOFF.png";
+			$dados["voto2"] = "assets/img/deslikeON.png";
 		}
 
 		$retorno[$i] = $dados;
